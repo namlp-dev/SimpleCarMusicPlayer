@@ -1,0 +1,52 @@
+[versions]
+agp = "8.13.2"
+junit = "4.13.2"
+junitVersion = "1.3.0"
+espressoCore = "3.7.0"
+appcompat = "1.7.1"
+material = "1.13.0"
+androidx-lifecycle = "2.7.0"
+androidx-media3 = "1.2.1"
+androidx-room = "2.6.1"
+glide = "4.15.1"
+#mlkit-speech-recognition = "16.0.1"
+androidx-car-app = "1.7.0"
+activity-ktx = "1.8.0"
+
+[libraries]
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+
+lifecycle-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "androidx-lifecycle" }
+lifecycle-livedata = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "androidx-lifecycle" }
+activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activity-ktx" }
+# Media3 (Cốt lõi âm thanh)
+media3-session = { group = "androidx.media3", name = "media3-session", version.ref = "androidx-media3" }
+media3-exoplayer = { group = "androidx.media3", name = "media3-exoplayer", version.ref = "androidx-media3" }
+media3-common = { group = "androidx.media3", name = "media3-common", version.ref = "androidx-media3" }
+
+# Room Database (Offline mode)
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "androidx-room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "androidx-room" }
+
+# Glide (Xử lý ảnh bìa)
+glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+glide-compiler = { group = "com.github.bumptech.glide", name = "compiler", version.ref = "glide" }
+
+# Voice & Android Auto
+#mlkit-speech = { group = "com.google.mlkit", name = "speech-recognition", version.ref = "mlkit-speech-recognition" }
+#car-app = { group  = "androidx.car.app", name = "car-app", version.ref = "androidx-car-app" }
+# Sửa lại name thành "app" và thêm bộ thư viện dành riêng cho màn hình Automotive
+car-app = { group = "androidx.car.app", name = "app", version.ref = "androidx-car-app" }
+car-app-automotive = { group = "androidx.car.app", name = "app-automotive", version.ref = "androidx-car-app" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+
+[bundles]
+# Thêm khối [bundles] này vào cuối file của bạn
+lifecycle = ["lifecycle-viewmodel", "lifecycle-livedata"]
+media3 = ["media3-session", "media3-exoplayer", "media3-common"]
